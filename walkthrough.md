@@ -46,3 +46,20 @@ I have successfully converted the static HTML demo into a modern Next.js applica
     npm run dev
     ```
 4.  Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Mobile Responsiveness Upgrade
+
+I have enhanced the application to be fully mobile-responsive.
+
+### Changes
+-   **Sidebar**: Now collapsible on mobile devices.
+    -   Added a hamburger menu to the Header (visible only on mobile).
+    -   Added a slide-in animation and backdrop overlay for the mobile sidebar.
+    -   Added a close button inside the sidebar.
+-   **Header**:
+    -   Optimized layout for smaller screens.
+    -   Hidden less critical elements (like "Export Report" and "View As" label) on mobile to save space.
+-   **Views**:
+    -   **HealthView**: Stacked the URL analysis form and issue list items vertically on mobile for better usability.
+    -   **SeoView**: Added horizontal scrolling to the keyword table to prevent layout breakage on small screens.
+    -   **Dashboard/Traffic**: Verified grid layouts adapt correctly (`grid-cols-1` on mobile).

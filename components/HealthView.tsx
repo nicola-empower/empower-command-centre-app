@@ -33,7 +33,7 @@ const HealthView: React.FC<HealthViewProps> = ({ data, openIssueModal, openHealt
             {/* URL Analyzer Input */}
             <div className="glass-card p-6 mb-8">
                 <h4 className="text-lg font-semibold text-app-text mb-4">Real-Time Analysis</h4>
-                <form onSubmit={handleAnalyze} className="flex gap-4">
+                <form onSubmit={handleAnalyze} className="flex flex-col md:flex-row gap-4">
                     <input
                         type="url"
                         placeholder="Enter website URL (e.g. https://example.com)"
@@ -44,7 +44,7 @@ const HealthView: React.FC<HealthViewProps> = ({ data, openIssueModal, openHealt
                     />
                     <button
                         type="submit"
-                        className="bg-app-accent text-app-text px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity flex items-center gap-2"
+                        className="bg-app-accent text-app-text px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
                         disabled={analyzing}
                     >
                         {analyzing ? <Loader2 className="w-5 h-5 animate-spin" /> : <Search className="w-5 h-5" />}
@@ -66,7 +66,7 @@ const HealthView: React.FC<HealthViewProps> = ({ data, openIssueModal, openHealt
                     </div>
                     <p className="text-xl font-medium text-app-text-sec mt-2">Overall Site Score</p>
                 </div>
-                <div className="md:col-span-2">
+                <div className="md:col-span-2 text-center md:text-left">
                     <h4 className="text-2xl font-semibold text-app-text mb-4">Actionable Insights</h4>
                     <p className="text-lg text-app-text-sec mb-6">Your score is based on automated tests. Fixing these issues will dramatically improve your site speed, user experience, and Google ranking.</p>
                     <button
@@ -82,18 +82,18 @@ const HealthView: React.FC<HealthViewProps> = ({ data, openIssueModal, openHealt
                 <h3 className="text-lg font-semibold text-app-text-sec uppercase tracking-wider mb-4 mt-8">Full Issue List</h3>
                 <div className="glass-card divide-y divide-app-border overflow-hidden">
                     {data.health.issues.map((issue) => (
-                        <div key={issue.id} className="p-4 flex justify-between items-center">
+                        <div key={issue.id} className="p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                             <div>
                                 <p className="text-lg font-semibold text-app-text">{issue.title}</p>
                                 <span className={clsx(
-                                    "px-2 py-0.5 rounded-full text-xs font-medium",
+                                    "px-2 py-0.5 rounded-full text-xs font-medium inline-block mt-1",
                                     issue.severity === 'Critical' ? 'bg-red-500/20 text-red-400' : 'bg-yellow-500/20 text-yellow-400'
                                 )}>
                                     {issue.severity}
                                 </span>
                             </div>
                             <button
-                                className="bg-app-bg-sec border border-app-border text-app-text-sec hover:text-app-text hover:bg-app-glass px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                                className="w-full md:w-auto bg-app-bg-sec border border-app-border text-app-text-sec hover:text-app-text hover:bg-app-glass px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                                 onClick={() => openIssueModal(issue)}
                             >
                                 View Fix

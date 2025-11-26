@@ -29,6 +29,8 @@ export default function Home() {
   const [activePage, setActivePage] = useState<PageId>('dashboard');
   const [modalState, setModalState] = useState<ModalState>({ type: 'none' });
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   // State for dynamic data (allows updates from API)
   const [currentData, setCurrentData] = useState<ClientDataType>(clientData['landscaper']);
 
@@ -227,16 +229,25 @@ export default function Home() {
 
   return (
     <div className="flex h-screen overflow-hidden bg-app-bg text-app-text transition-colors duration-300">
-      <Sidebar activePage={activePage} setActivePage={(page) => setActivePage(page as PageId)} />
+      <Sidebar
+        activePage={activePage}
+        setActivePage={(page) => {
+          setActivePage(page as PageId);
+          setIsSidebarOpen(false);
+        }}
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+      />
 
       <main className="flex-1 flex flex-col overflow-hidden">
         <Header
           title={getPageTitle()}
           activeClient={activeClient}
           setActiveClient={setActiveClient}
+          onMenuClick={() => setIsSidebarOpen(true)}
         />
 
-        <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-8">
+        <div className="flex-1 overflow-y-auto p-4 md:p-8 space-y-8">
           {renderContent()}
         </div>
       </main>

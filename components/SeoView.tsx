@@ -12,24 +12,28 @@ const SeoView: React.FC<SeoViewProps> = ({ data, setActivePage }) => {
     return (
         <div>
             <h3 className="text-lg font-semibold text-app-text-sec uppercase tracking-wider mb-4">Local SEO Keyword Rankings</h3>
-            <div className="glass-card divide-y divide-app-border overflow-hidden">
-                <div className="p-4 bg-app-bg-sec/30 flex items-center text-sm font-medium text-app-text-sec">
-                    <div className="flex-1">Keyword / Search Term</div>
-                    <div className="w-24 text-center">Position</div>
-                    <div className="w-24 text-center">Change (7d)</div>
-                </div>
-                {data.seo.keywords.map((kw, index) => (
-                    <div key={index} className="p-4 flex items-center">
-                        <div className="flex-1 text-lg font-semibold text-app-text">{kw.term}</div>
-                        <div className="w-24 text-center text-2xl font-bold text-app-text">{kw.pos}</div>
-                        <div className={clsx(
-                            "w-24 text-center text-lg font-medium",
-                            kw.change > 0 ? 'text-app-accent-sec' : (kw.change < 0 ? 'text-app-alert' : 'text-app-text-sec')
-                        )}>
-                            {kw.change > 0 ? `▲ ${kw.change}` : (kw.change < 0 ? `▼ ${Math.abs(kw.change)}` : '—')}
+            <div className="glass-card overflow-hidden">
+                <div className="overflow-x-auto">
+                    <div className="min-w-[600px] divide-y divide-app-border">
+                        <div className="p-4 bg-app-bg-sec/30 flex items-center text-sm font-medium text-app-text-sec">
+                            <div className="flex-1">Keyword / Search Term</div>
+                            <div className="w-24 text-center">Position</div>
+                            <div className="w-24 text-center">Change (7d)</div>
                         </div>
+                        {data.seo.keywords.map((kw, index) => (
+                            <div key={index} className="p-4 flex items-center">
+                                <div className="flex-1 text-lg font-semibold text-app-text">{kw.term}</div>
+                                <div className="w-24 text-center text-2xl font-bold text-app-text">{kw.pos}</div>
+                                <div className={clsx(
+                                    "w-24 text-center text-lg font-medium",
+                                    kw.change > 0 ? 'text-app-accent-sec' : (kw.change < 0 ? 'text-app-alert' : 'text-app-text-sec')
+                                )}>
+                                    {kw.change > 0 ? `▲ ${kw.change}` : (kw.change < 0 ? `▼ ${Math.abs(kw.change)}` : '—')}
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                ))}
+                </div>
             </div>
 
             <div className="glass-card p-6 mt-6 border-l-4 border-app-ai">
