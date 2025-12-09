@@ -2,7 +2,8 @@
 
 A modern, white-label business dashboard built for digital agencies to provide their clients with real-time insights, site health monitoring, and AI-driven growth strategies.
 
-![Empower Command Centre Dashboard](public/dashboard-preview.png)
+<img width="2861" height="1512" alt="image" src="https://github.com/user-attachments/assets/56bee4dd-a89f-44d9-96bb-097b5893cf1c" />
+
 
 ##  Features
 
