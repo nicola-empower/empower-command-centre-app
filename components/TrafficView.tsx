@@ -38,8 +38,8 @@ const TrafficView: React.FC<TrafficViewProps> = ({ data }) => {
             {
                 label: 'Users',
                 data: data.dashboard.traffic.chart,
-                borderColor: '#3B82F6',
-                backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                borderColor: '#4F46E5', // Indigo 600
+                backgroundColor: 'rgba(79, 70, 229, 0.1)', // Indigo 600 with opacity
                 tension: 0.4,
                 fill: true,
             },
@@ -53,7 +53,7 @@ const TrafficView: React.FC<TrafficViewProps> = ({ data }) => {
             legend: { display: false },
         },
         scales: {
-            y: { beginAtZero: true, grid: { color: 'rgba(255, 255, 255, 0.1)' } },
+            y: { beginAtZero: true, grid: { color: 'rgba(0, 0, 0, 0.05)' } },
             x: { grid: { display: false } }
         },
         elements: {
@@ -66,7 +66,7 @@ const TrafficView: React.FC<TrafficViewProps> = ({ data }) => {
         datasets: [
             {
                 data: data.dashboard.devices,
-                backgroundColor: ['#3B82F6', '#10B981'],
+                backgroundColor: ['#4F46E5', '#10B981'],
                 borderWidth: 0,
             },
         ],
@@ -76,7 +76,7 @@ const TrafficView: React.FC<TrafficViewProps> = ({ data }) => {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-            legend: { position: 'bottom' as const, labels: { color: '#9CA3AF' } },
+            legend: { position: 'bottom' as const, labels: { color: '#4B5563' } },
         },
         cutout: '70%',
     };

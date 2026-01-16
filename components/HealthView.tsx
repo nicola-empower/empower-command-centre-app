@@ -44,7 +44,7 @@ const HealthView: React.FC<HealthViewProps> = ({ data, openIssueModal, openHealt
                     />
                     <button
                         type="submit"
-                        className="bg-app-accent text-app-text px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+                        className="bg-app-accent text-white px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
                         disabled={analyzing}
                     >
                         {analyzing ? <Loader2 className="w-5 h-5 animate-spin" /> : <Search className="w-5 h-5" />}
@@ -59,7 +59,7 @@ const HealthView: React.FC<HealthViewProps> = ({ data, openIssueModal, openHealt
                     <div className="inline-block relative">
                         <span className={clsx(
                             "text-8xl font-bold",
-                            data.health.score < 70 ? 'text-app-alert' : (data.health.score < 90 ? 'text-yellow-400' : 'text-app-accent-sec')
+                            data.health.score < 70 ? 'text-app-alert' : (data.health.score < 90 ? 'text-amber-600' : 'text-app-accent-sec')
                         )}>
                             {data.health.score}
                         </span>
@@ -70,7 +70,7 @@ const HealthView: React.FC<HealthViewProps> = ({ data, openIssueModal, openHealt
                     <h4 className="text-2xl font-semibold text-app-text mb-4">Actionable Insights</h4>
                     <p className="text-lg text-app-text-sec mb-6">Your score is based on automated tests. Fixing these issues will dramatically improve your site speed, user experience, and Google ranking.</p>
                     <button
-                        className="bg-app-accent text-app-text w-full md:w-auto px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+                        className="bg-app-accent text-white w-full md:w-auto px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
                         onClick={openHealthModal}
                     >
                         View & Fix {data.health.issues.length} Critical Issue{data.health.issues.length === 1 ? '' : 's'}
@@ -87,7 +87,7 @@ const HealthView: React.FC<HealthViewProps> = ({ data, openIssueModal, openHealt
                                 <p className="text-lg font-semibold text-app-text">{issue.title}</p>
                                 <span className={clsx(
                                     "px-2 py-0.5 rounded-full text-xs font-medium inline-block mt-1",
-                                    issue.severity === 'Critical' ? 'bg-red-500/20 text-red-400' : 'bg-yellow-500/20 text-yellow-400'
+                                    issue.severity === 'Critical' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700'
                                 )}>
                                     {issue.severity}
                                 </span>

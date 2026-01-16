@@ -228,7 +228,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex h-screen overflow-hidden bg-app-bg text-app-text transition-colors duration-300">
+    <div className="flex h-screen overflow-hidden text-app-text transition-colors duration-300">
       <Sidebar
         activePage={activePage}
         setActivePage={(page) => {

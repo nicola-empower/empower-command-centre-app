@@ -31,7 +31,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, setActivePage, isOpen = f
             />
 
             <aside className={clsx(
-                "bg-app-bg-sec border-r border-app-border flex-shrink-0 flex flex-col p-4 space-y-4 transition-transform duration-300 ease-in-out",
+                "backdrop-blur-xl bg-white/40 border-r border-white/50 flex-shrink-0 flex flex-col p-4 space-y-4 transition-transform duration-300 ease-in-out",
                 "fixed inset-y-0 left-0 z-50 w-64", // Mobile: fixed, full height
                 "md:relative md:translate-x-0", // Desktop: relative, always visible
                 isOpen ? "translate-x-0" : "-translate-x-full" // Mobile toggle state
@@ -56,7 +56,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, setActivePage, isOpen = f
                             className={clsx(
                                 'w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200',
                                 activePage === item.id
-                                    ? 'bg-app-accent text-app-text'
+                                    ? 'bg-app-accent text-white'
                                     : 'text-app-text-sec hover:text-app-text hover:bg-app-glass',
                                 item.className
                             )}
@@ -67,9 +67,12 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, setActivePage, isOpen = f
                     ))}
                 </nav>
 
-                <div className="glass-card p-4 text-center">
+                <div className="glass-card p-4 flex flex-col items-center text-center gap-2">
                     <p className="text-sm text-app-text-sec">A bespoke solution by</p>
-                    <p className="font-bold text-lg text-app-text">Empower Digital Solutions</p>
+                    <div className="flex items-center gap-2">
+                        <img src="/empower-logo.png" alt="Empower Digital Solutions" className="h-8 w-auto object-contain" />
+                        <p className="font-bold text-sm text-app-text leading-tight text-left">Empower<br />Digital Solutions</p>
+                    </div>
                 </div>
             </aside>
         </>

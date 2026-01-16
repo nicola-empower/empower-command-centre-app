@@ -48,7 +48,7 @@ const AiView: React.FC<AiViewProps> = ({ data, onGenerateBlog, onGenerateStrateg
                         </div>
                     </div>
                     <button
-                        className="bg-app-ai text-app-text w-full py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+                        className="bg-app-ai text-white w-full py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
                         onClick={handleBlogClick}
                         disabled={loadingBlog}
                     >
@@ -73,7 +73,7 @@ const AiView: React.FC<AiViewProps> = ({ data, onGenerateBlog, onGenerateStrateg
                         </div>
                     </div>
                     <button
-                        className="bg-app-ai text-app-text w-full py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+                        className="bg-app-ai text-white w-full py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
                         onClick={handleStrategyClick}
                         disabled={loadingStrategy}
                     >

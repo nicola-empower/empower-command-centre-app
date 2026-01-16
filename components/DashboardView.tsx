@@ -41,8 +41,8 @@ const DashboardView: React.FC<DashboardViewProps> = ({ data, setActivePage, open
             {
                 label: 'Users',
                 data: data.dashboard.traffic.chart,
-                borderColor: '#3B82F6',
-                backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                borderColor: '#4F46E5', // Indigo 600
+                backgroundColor: 'rgba(79, 70, 229, 0.1)', // Indigo 600 with opacity
                 tension: 0.4,
                 fill: true,
             },
@@ -69,7 +69,7 @@ const DashboardView: React.FC<DashboardViewProps> = ({ data, setActivePage, open
         datasets: [
             {
                 data: data.dashboard.devices,
-                backgroundColor: ['#3B82F6', '#10B981'],
+                backgroundColor: ['#4F46E5', '#10B981'], // Indigo 600, Emerald 500
                 borderWidth: 0,
             },
         ],
@@ -99,7 +99,7 @@ const DashboardView: React.FC<DashboardViewProps> = ({ data, setActivePage, open
                             <div className="inline-block relative">
                                 <span className={clsx(
                                     "text-6xl font-bold",
-                                    data.dashboard.healthScore < 70 ? 'text-app-alert' : (data.dashboard.healthScore < 90 ? 'text-yellow-400' : 'text-app-accent-sec')
+                                    data.dashboard.healthScore < 70 ? 'text-app-alert' : (data.dashboard.healthScore < 90 ? 'text-amber-600' : 'text-app-accent-sec')
                                 )}>
                                     {data.dashboard.healthScore}
                                 </span>
@@ -108,7 +108,7 @@ const DashboardView: React.FC<DashboardViewProps> = ({ data, setActivePage, open
                                 {data.dashboard.healthIssues} Critical Issue{data.dashboard.healthIssues === 1 ? '' : 's'} Found
                             </p>
                             <button
-                                className="bg-app-accent text-app-text w-full mt-4 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+                                className="bg-app-accent text-white w-full mt-4 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity"
                                 onClick={openHealthModal}
                             >
                                 View & Fix Issues
@@ -145,7 +145,7 @@ const DashboardView: React.FC<DashboardViewProps> = ({ data, setActivePage, open
                         <div className="phantom-card p-4 rounded-lg flex flex-col items-center justify-center text-center space-y-2">
                             <Users className="w-10 h-10 text-app-text-sec" />
                             <p className="font-semibold text-app-text-sec">Connect CRM</p>
-                            <span className="text-xs font-medium text-app-text bg-gray-700 px-2 py-0.5 rounded-full">Coming Soon</span>
+                            <span className="text-xs font-medium text-white bg-gray-500 px-2 py-0.5 rounded-full">Coming Soon</span>
                         </div>
                         <div className="phantom-card p-4 rounded-lg flex flex-col items-center justify-center text-center space-y-2">
                             <Mail className="w-10 h-10 text-app-text-sec" />

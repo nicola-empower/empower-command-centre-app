@@ -38,14 +38,14 @@ const AppView: React.FC<AppViewProps> = ({ data, openAlertModal }) => {
                             </div>
                             <span className={clsx(
                                 "px-2 py-0.5 rounded-full text-sm font-medium ml-8 inline-block mt-2 md:mt-0",
-                                alert.severity.includes('CRITICAL') ? 'bg-red-500/20 text-red-400' : 'bg-yellow-500/20 text-yellow-400'
+                                alert.severity.includes('CRITICAL') ? 'bg-red-100 text-red-700' : 'bg-yellow-100 text-yellow-700'
                             )}>
                                 {alert.severity}
                             </span>
                             <p className="text-app-text-sec ml-8 mt-2">A high-priority issue affecting user experience or security has been detected.</p>
                         </div>
                         <button
-                            className="bg-app-accent text-app-text px-6 py-3 rounded-lg font-semibold mt-4 md:mt-0 hover:opacity-90 transition-opacity"
+                            className="bg-app-accent text-white px-6 py-3 rounded-lg font-semibold mt-4 md:mt-0 hover:opacity-90 transition-opacity"
                             onClick={() => openAlertModal(alert)}
                         >
                             View Fix
