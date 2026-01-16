@@ -42,7 +42,7 @@ const AppView: React.FC<AppViewProps> = ({ data, openAlertModal }) => {
                             )}>
                                 {alert.severity}
                             </span>
-                            <p className="text-app-text-sec ml-8 mt-2">A high-priority issue affecting user experience or security has been detected.</p>
+                            <p className="text-app-text-sec ml-8 mt-2">Unanswered reviews damage your Local SEO and turn away new customers. Reply now to boost your ranking.</p>
                         </div>
                         <button
                             className="bg-app-accent text-white px-6 py-3 rounded-lg font-semibold mt-4 md:mt-0 hover:opacity-90 transition-opacity"
